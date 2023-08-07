@@ -1,3 +1,12 @@
+/*
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
 *,
 ::before,
 ::after {
@@ -573,6 +582,10 @@ video {
   left: -2.5rem;
 }
 
+.-left-14 {
+  left: -3.5rem;
+}
+
 .-left-6 {
   left: -1.5rem;
 }
@@ -603,6 +616,18 @@ video {
 
 .top-0 {
   top: 0px;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.-left-2 {
+  left: -0.5rem;
+}
+
+.-left-4 {
+  left: -1rem;
 }
 
 .-z-10 {
@@ -772,10 +797,6 @@ video {
   height: 100vh;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
 .w-1\/4 {
   width: 25%;
 }
@@ -804,16 +825,16 @@ video {
   width: 1.5rem;
 }
 
-.w-\[250px\] {
-  width: 250px;
-}
-
 .w-\[264px\] {
   width: 264px;
 }
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-\[308px\] {
+  width: 308px;
 }
 
 .w-\[500px\] {
@@ -924,6 +945,14 @@ video {
   border-color: rgb(249 250 251 / var(--tw-divide-opacity));
 }
 
+.divide-opacity-50 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.5;
+}
+
+.divide-opacity-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.2;
+}
+
 .justify-self-end {
   justify-self: end;
 }
@@ -974,6 +1003,14 @@ video {
 .border-gray-50 {
   --tw-border-opacity: 1;
   border-color: rgb(249 250 251 / var(--tw-border-opacity));
+}
+
+.border-opacity-50 {
+  --tw-border-opacity: 0.5;
+}
+
+.border-opacity-20 {
+  --tw-border-opacity: 0.2;
 }
 
 .bg-white {
@@ -1091,10 +1128,6 @@ video {
 
 .pb-\[30px\] {
   padding-bottom: 30px;
-}
-
-.pl-16 {
-  padding-left: 4rem;
 }
 
 .pl-4 {
@@ -1240,6 +1273,12 @@ video {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @font-face {
@@ -1612,6 +1651,10 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.icon-button-windows:hover svg path{
+  stroke: #5C4BF6;
+}
+
 .text-title-section {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1861,7 +1904,7 @@ body {
 .windows-magicwand:hover .magic-wand-image {
   top: 0;
   right: 0;
-  transform: translate(120%, -120%);
+  transform: translate(120%, -120%) scale(0.5);
   opacity: 0;
 }
 
@@ -1873,30 +1916,146 @@ body {
 }
 
 .prowiriting-image{
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  bottom: -50%;
+  top: 100%;
+  left: 6%;
   transition: all 0.8s ease;
 }
 
 .windows-magicwand:hover .prowiriting-image {
-  transform: translateY(-95%);
+  transform: translateY(-45%);
   opacity: 1;
+}
+
+.windows-magicwand:hover .animation-text {
+  transition: all 0.8s ease;
+  opacity: 0;
 }
 
 @media screen and (max-width: 640px) {
   .prowiriting-image {
     bottom: -50%;
+    left: 0;
   }
 
   .windows-magicwand:hover .prowiriting-image {
-    transform: translateY(-70%);
+    transform: translateY(-40%);
+  }
+}
+
+/* Tambahkan animasi untuk gambar */
+
+@keyframes moveImage {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-15%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+}
+
+@keyframes resetAnimation {
+  0% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-15%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.button-Proofread{
+  font-family: 'Inter', sans-serif;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateY(-15%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-15%);
+    opacity: 1;
+  }
+}
+
+.image-container #image2 {
+  animation: moveUpAndDown 2s 2 ease-out, moveDown 1s 1 600ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.image-container #image1 {
+  animation: moveUpAndDown 2s 1 ease-out, moveDown 1s 1 400ms ease-out;
+  animation-delay: 5000ms;
+  animation-fill-mode: forwards;
+}
+
+.hidden-reset{
+  display: none;
+}
+
+/* CSS animation to move the new button to the left */
+
+@keyframes moveToLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-1px);
+    /* Adjust the distance to move left as needed */
+  }
+}
+
+@keyframes moveToRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(4px);
+    /* Adjust the distance to move right as needed */
   }
 }
 
 .hover\:bg-\[\#5C4BF6\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(92 75 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:hover\:text-\[\#5C4BF6\]:hover:hover {
@@ -1915,10 +2074,6 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:absolute {
-    position: absolute;
-  }
-
   .sm\:-bottom-10 {
     bottom: -2.5rem;
   }
@@ -1999,10 +2154,6 @@ body {
     height: 10rem;
   }
 
-  .sm\:w-1\/5 {
-    width: 20%;
-  }
-
   .sm\:w-40 {
     width: 10rem;
   }
@@ -2017,11 +2168,6 @@ body {
 
   .sm\:w-full {
     width: 100%;
-  }
-
-  .sm\:translate-x-4 {
-    --tw-translate-x: 1rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .sm\:flex-row {
@@ -2052,10 +2198,6 @@ body {
 
   .sm\:overflow-hidden {
     overflow: hidden;
-  }
-
-  .sm\:overflow-visible {
-    overflow: visible;
   }
 
   .sm\:overflow-y-visible {
@@ -2291,4 +2433,3 @@ body {
     line-height: 105.8px;
   }
 }
-
