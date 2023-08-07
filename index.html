@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/output.css" rel="stylesheet">
+</head>
+
+<body class="relative">
+
+    <section class="wrapper -z-20">
+        <div id="stars"></div>
+    </section>
+
+    <div class="w-full lg:max-w-[1440px] space-y-10 md:space-y-24">
+        <nav class="top-0 left-0 z-20 w-full bg-top-navbar">
+            <div class="flex flex-wrap items-center justify-between mx-auto pt-6 pb-4 px-4 md:px-10 lg:px-[100px]">
+                <a>
+                    <img src="../public/img/logo-prowriting.png" class="px-1 w-28 md:py-3" alt="Prowriting Logo">
+                </a>
+                <div class="flex sm:order-2">
+                    <button type="button"
+                        class="hidden md:block sm:mr-6 items-center text-neutral-gray-200 hover:text-[#5C4BF6] text-base px-[18px] py-2.5 box-shadows-xs font-bold">
+                        Login
+                    </button>
+                    <button type="button" class="hidden md:flex button-cta">
+                        <svg class="w-5 h-5 mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.80006 0H13.2C15.1873 0 16.8 1.61271 16.8 3.60003C16.8 4.99269 16.008 6.20134 14.8502 6.79997C16.008 7.39862 16.8 8.60732 16.8 9.99998C16.8 11.9873 15.1873 13.6 13.2 13.6C12.0695 13.6 11.0603 13.0782 10.4001 12.2624V16.4C10.4001 18.3873 8.78739 20 6.80006 20C4.81274 20 3.20001 18.3873 3.20001 16.4C3.20001 15.0073 3.992 13.7986 5.14989 13.2C3.992 12.6013 3.20001 11.3926 3.20001 9.99998C3.20001 8.60732 3.99199 7.39862 5.14987 6.79997C3.992 6.20134 3.20001 4.99269 3.20001 3.60003C3.20001 1.61271 4.81274 0 6.80006 0ZM4.00001 3.60003C4.00001 2.05454 5.25456 0.8 6.80006 0.8H9.59991V6.39995H6.80006L6.79138 6.39996C5.24985 6.39527 4.00001 5.1426 4.00001 3.60003ZM9.60011 9.9619C9.59998 9.97458 9.59991 9.98727 9.59991 9.99998C9.59991 10.0127 9.59998 10.0254 9.60011 10.0381V12.7999H6.80004C5.25456 12.8 4.00001 11.5455 4.00001 9.99998C4.00001 8.45736 5.2499 7.20461 6.79146 7.19996L6.80006 7.19997H9.59991L9.60011 9.9619ZM10.4001 10.0335V9.96644C10.4181 8.4402 11.6594 7.20612 13.1885 7.19997H13.2C13.2028 7.19997 13.2057 7.19997 13.2086 7.19996C14.7501 7.20461 16 8.45736 16 9.99998C16 11.5455 14.7455 12.8 13.2 12.8C11.6657 12.8 10.4181 11.5636 10.4001 10.0335ZM10.9377 7.19997C10.7402 7.35978 10.5599 7.54005 10.4001 7.73755V7.19997H10.9377ZM13.2086 6.39996C13.2057 6.39995 13.2029 6.39995 13.2 6.39995C13.1956 6.39995 13.1912 6.39996 13.1868 6.39997H10.4001V0.8H13.2C14.7455 0.8 16 2.05454 16 3.60003C16 5.1426 14.7502 6.39527 13.2086 6.39996ZM6.80006 13.5999C5.25456 13.5999 4.00001 14.8545 4.00001 16.4C4.00001 17.9455 5.25456 19.2 6.80006 19.2C8.34556 19.2 9.60011 17.9455 9.60011 16.4V13.5999H6.80006Z"
+                                fill="#2B2B2B" />
+                        </svg>
+                        Get Figma Plugin
+                    </button>
+                    <button data-collapse-toggle="navbar-mobile" type="button"
+                        class="inline-flex items-center justify-center md:hidden" aria-controls="navbar-mobile"
+                        aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg lass="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 19H22M3 12H22M3 5C10.42 5 12.5 5 12.5 5" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul class="flex p-4 mt-4 text-base sm:p-0 sm:flex-row lg:space-x-8 sm:mt-0">
+                        <li>
+                            <a href="#" class="font-semibold nav-link text-primary" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="nav-link text-neutral-gray-200 hover:text-[#5C4BF6] font-bold">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-neutral-gray-200 hover:text-[#5C4BF6] font-bold">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fixed top-0 left-0 z-10 items-center justify-center hidden w-screen h-screen pr-4 mx-auto text-center sm:order-1 bg-gradient-radial"
+                    id="navbar-mobile">
+                    <div class="flex justify-end w-full">
+                        <button class="py-6 pr-6 text-neutral-white" id="closeButton">
+                            <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 4L19 18.5" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                <path d="M19 4L4.5 18.5" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="relative flex flex-col justify-between w-full h-screen box-shadows-xl">
+                        <ul
+                            class="flex flex-col mx-5 text-xl font-bold border-t border-b divide-y divide-gray-50 border-gray-50">
+                            <li>
+                                <a href="#" class="block w-full py-8 px-[18px] text-neutral-gray hover:text-[#5C4BF6]"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block w-full py-8 px-[18px] text-neutral-gray hover:text-[#5C4BF6]">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block w-full py-8 px-[18px] text-neutral-gray hover:text-[#5C4BF6]">Blog</a>
+                            </li>
+                        </ul>
+                        <div class="flex flex-col w-full px-2">
+                            <button type="button"
+                                class="flex items-center justify-center text-neutral-gray-200 border border[#F2F4F7] hover:bg-[#5C4BF6] hover:text-white text-base font-bold rounded-5xl px-[18px] py-2.5 text-center mb-6 box-shadows-xs">
+                                Login
+                            </button>
+                            <button type="button"
+                                class="flex items-center justify-center text-neutral-dark bg-white hover:bg-[#5C4BF6] hover:text-white text-base font-bold rounded-5xl px-[18px] py-2.5 text-center box-shadows-xs icon-hover mb-24">
+                                <svg class="w-5 h-5 mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.80006 0H13.2C15.1873 0 16.8 1.61271 16.8 3.60003C16.8 4.99269 16.008 6.20134 14.8502 6.79997C16.008 7.39862 16.8 8.60732 16.8 9.99998C16.8 11.9873 15.1873 13.6 13.2 13.6C12.0695 13.6 11.0603 13.0782 10.4001 12.2624V16.4C10.4001 18.3873 8.78739 20 6.80006 20C4.81274 20 3.20001 18.3873 3.20001 16.4C3.20001 15.0073 3.992 13.7986 5.14989 13.2C3.992 12.6013 3.20001 11.3926 3.20001 9.99998C3.20001 8.60732 3.99199 7.39862 5.14987 6.79997C3.992 6.20134 3.20001 4.99269 3.20001 3.60003C3.20001 1.61271 4.81274 0 6.80006 0ZM4.00001 3.60003C4.00001 2.05454 5.25456 0.8 6.80006 0.8H9.59991V6.39995H6.80006L6.79138 6.39996C5.24985 6.39527 4.00001 5.1426 4.00001 3.60003ZM9.60011 9.9619C9.59998 9.97458 9.59991 9.98727 9.59991 9.99998C9.59991 10.0127 9.59998 10.0254 9.60011 10.0381V12.7999H6.80004C5.25456 12.8 4.00001 11.5455 4.00001 9.99998C4.00001 8.45736 5.2499 7.20461 6.79146 7.19996L6.80006 7.19997H9.59991L9.60011 9.9619ZM10.4001 10.0335V9.96644C10.4181 8.4402 11.6594 7.20612 13.1885 7.19997H13.2C13.2028 7.19997 13.2057 7.19997 13.2086 7.19996C14.7501 7.20461 16 8.45736 16 9.99998C16 11.5455 14.7455 12.8 13.2 12.8C11.6657 12.8 10.4181 11.5636 10.4001 10.0335ZM10.9377 7.19997C10.7402 7.35978 10.5599 7.54005 10.4001 7.73755V7.19997H10.9377ZM13.2086 6.39996C13.2057 6.39995 13.2029 6.39995 13.2 6.39995C13.1956 6.39995 13.1912 6.39996 13.1868 6.39997H10.4001V0.8H13.2C14.7455 0.8 16 2.05454 16 3.60003C16 5.1426 14.7502 6.39527 13.2086 6.39996ZM6.80006 13.5999C5.25456 13.5999 4.00001 14.8545 4.00001 16.4C4.00001 17.9455 5.25456 19.2 6.80006 19.2C8.34556 19.2 9.60011 17.9455 9.60011 16.4V13.5999H6.80006Z"
+                                        fill="#2B2B2B" />
+                                </svg>
+                                Get Figma Plugin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section id="hero" class="relative flex flex-col justify-center w-full mx-auto my-10 text-center">
+            <div class="absolute inset-0 flex items-center justify-center -z-10">
+                <img class="absolute w-[300px] sm:w-[500px] lg:w-[700px] opacity-50 mb-24 sm:mb-36"
+                    src="../public/img/accent.png" alt="Ellipse">
+            </div>
+            <div class="pt-20 mb-10 sm:px-16 md:px-32 lg:px-44">
+                <h1
+                    class="text-neutral-white leading-[30.8px] sm:leading-[50px] md:leading-[75.8px] xl:leading-[105.8px] text-[28px] sm:text-5xl md:text-6xl xl:text-8xl font-bold mb-4 px-4">
+                    Magical content design <span class="title-text">tools from the future.</span></h1>
+                <p class="text-xs leading-[18px] font-normal text-neutral-gray-200 px-4 sm:text-2xl">Scale your content
+                    guidelines
+                    to align
+                    with the product design and marketing team. Instanly write clear, concise, and consistent coples</p>
+            </div>
+            <button type="button" class="flex mx-auto button-cta">
+                <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                        stroke="#2B2B2B" stroke-width="1.5" />
+                </svg>
+                Start Writing for Free
+            </button>
+        </section>
+
+        <section id="feature" class="flex flex-col justify-center w-full mx-auto mb-10 text-center">
+
+            <div class="px-4 pt-20 mb-10 sm:mb-12 sm:px-32 lg:px-80">
+                <h1 class="mb-4 text-title-section">
+                    Delegate writing tasks to AI so you can <span class="title-text">focus more on strategic
+                        work.</span>
+                </h1>
+                <p class="sm:px-8 text-desc-section">
+                    Delegate repetitive
+                    writing tasks to AI. Spend more time on strategic tasks like research, information architecture,
+                    skateholder management, etc</p>
+            </div>
+
+            <!-- row 1 -->
+            <div
+                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-y-0 sm:space-x-8 mb-12">
+
+                <div
+                    class="flex flex-col justify-between w-full px-10 pt-10 sm:pt-12 sm:pl-12 md:flex-row md:w-2/3 text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative">
+                    <img class="absolute bottom-0 left-0 opacity-20 -z-10" src="/public/img/bg-1.svg"
+                        alt="bg circle -1">
+                    <div class="w-full pb-8 md:w-1/2">
+                        <div class="sm:mb-7">
+                            <h2 class="pr-10 text-title-windows">Generate a magical copy for
+                                your design</h2>
+                            <p class="text-desc-windows">Experience faster,
+                                better, and more cost-effective UX collaboration
+                                with Co-writing. Powered by the most advanced AI, the GPT-4.</p>
+                        </div>
+                        <div class="hidden mb-6 sm:flex sm:flex-col">
+                            <small class="mb-3 text-sm font-normal text-neutral-gray-200">header-title</small>
+                            <p
+                                class="text-neutral-white font-normal text-[20px] leading-[30px] pt-4 pb-2.5 px-2 border border-[#0E8CE9]">
+                                Create or login an account to join member and get more benefits!</p>
+                        </div>
+                        <button type="button"
+                            class="hidden sm:flex items-center text-neutral-white bg-primary text-base font-bold rounded-5xl px-[18px] py-2.5 text-center box-shadows-xs icon-hover">
+                            <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                                    stroke="#FFF" stroke-width="1.5" />
+                            </svg>
+                            Generate
+                        </button>
+                    </div>
+                    <div class="relative w-full overflow-hidden md:w-1/2">
+                        <img class="sm:absolute bottom-0 -mb-20 sm:mb-0 w-[264px] sm:w-full"
+                            src="/public/img/image 37.png" alt="image">
+                    </div>
+                </div>
+                <div
+                    class="relative flex-row items-center w-full pb-10 overflow-hidden px-11 pt-11 sm:px-12 sm:pt-12 md:flex-col md:w-1/3 bg-windows rounded-4xl border-windows windows-magicwand">
+                    <img class="absolute top-0 right-0 opacity-20 -z-10" src="/public/img/bg-2.svg" alt="bg circle 2">
+                    <div class="mb-12 text-start">
+                        <h2 class="text-title-windows">Delegate repetitive writing tasks to AI.</h2>
+                        <p class="text-desc-windows">Spend more time on strategic tasks like research, information
+                            architecture, stakeholder management, etc.</p>
+                    </div>
+                    <img class="mx-auto w-36 h-36 sm:w-40 sm:h-40 magic-wand-image" src="/public/img/magic-wand.png"
+                        alt="magic-wand">
+                    <img class="sm:translate-x-4 prowiriting-image w-[250px]" src="/public/img/prowriting.png"
+                        alt="prowriting">
+                </div>
+            </div>
+
+            <!-- row 2 -->
+            <div class="flex flex-col md:flex-row w-full mx-auto px-4 sm:px-32 lg:px-[100px] mb-12">
+                <div
+                    class="flex flex-col justify-start w-full pl-9 pr-8 pt-9 sm:pt-12 sm:pl-12 sm:pr-0 md:flex-row text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative">
+                    <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-3.svg" alt="bg circle 3">
+                    <div class="w-full justify-items-stretch">
+                        <div class="mb-8 sm:pr-64 sm:mb-10">
+                            <h2 class="text-title-windows">Automated proofreading</h2>
+                            <p class="text-desc-windows">Getting proofreading
+                                help from Prowriting will keep you worry-free.</p>
+                        </div>
+                        <img class="hidden w-full sm:block justify-self-end" src="/public/img/image 41.png"
+                            alt="image 41">
+                    </div>
+                    <div class="relative w-full overflow-hidden sm:overflow-visible md:w-1/2">
+                        <img class="top-0 h-full -mb-10 sm:absolute -left-10 sm:-mb-0" src="/public/img/image 40.png"
+                            alt="image 40">
+                    </div>
+                </div>
+            </div>
+
+            <!-- row 3 -->
+            <div
+                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-y-0 sm:space-x-8 mb-12">
+                <div
+                    class="relative flex-row items-center w-full pt-12 pb-16 md:flex-col md:w-1/3 bg-windows rounded-4xl border-windows figmas-buddy inner-card-shadow">
+                    <img class="absolute top-0 right-0 opacity-20 -z-10" src="/public/img/bg-4.svg" alt="bg circle 4">
+                    <div class="px-12 text-start">
+                        <h2 class="text-title-windows">Figma's new AI buddy</h2>
+                        <p class="text-desc-windows">Elevate your favorite
+                            design
+                            tool with the power of Prowriting.</p>
+                    </div>
+                    <div class="flex items-center justify-between mx-auto mt-32 overflow-hidden sm:mt-20">
+                        <div class="relative -ml-3">
+                            <img class=" w-36 sm:w-40 figma-icon" src="/public/img/figma-icon.png" alt="FIgma icon">
+                            <img class="absolute top-0 left-0 w-36 sm:w-40 glow-figma-icon"
+                                src="/public/img/figma-icon-glow.png" alt="FIgma icon">
+                        </div>
+                        <div class="relative -mr-3">
+                            <img class=" w-36 sm:w-40 magic-wand" src="/public/img/magic-wand.png" alt="magic-wand">
+                            <img class="absolute top-0 left-0 w-36 sm:w-40 glow-magic-wand"
+                                src="/public/img/magic-wan-glow.png" alt="FIgma icon">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative flex flex-col justify-between w-full overflow-y-hidden pt-9 sm:pt-12 sm:overflow-hidden md:w-2/3 text-start bg-windows rounded-4xl border-windows sm:overflow-y-visible">
+                    <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-5.svg" alt="bg circle 5">
+                    <div class="mb-8 px-9 sm:px-12">
+                        <h2 class="text-title-windows">Ensure Term Consistency</h2>
+                        <p class="text-desc-windows">Achieve term consistency
+                            in
+                            your Figma design effortlessly with our co-writing feature.</p>
+                    </div>
+                    <img class="hidden sm:flex" src="/public/img/image 18-1.png" alt="">
+                    <img class="sm:hidden w-[680px] drop-shadow-image" src="/public/img/image 18.png" alt="image">
+                    <div class="absolute bottom-0 hidden sm:flex right-4">
+                        <img class="" src="/public/img/image 19.png" alt="image 19">
+                        <div class="flex flex-col justify-end">
+                            <img class="rounded-t-lg" src="/public/img/image 44.png" alt="image 44">
+                            <img class="" src="/public/img/image 43.png" alt="image 43">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="button" class="flex mx-auto mb-20 button-cta">
+                <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                        stroke="#2B2B2B" stroke-width="1.5" />
+                </svg>
+                See the Magic
+            </button>
+
+        </section>
+
+        <section id="personalization" class="flex flex-col justify-center w-full mx-auto mb-10 text-center">
+
+            <div class="px-4 pt-20 mb-12 sm:px-32 lg:px-64">
+                <h1 class="mb-4 text-title-section">
+                    Personalization and <span class="title-text">dynamic style.</span>
+                </h1>
+                <p class="text-desc-section">
+                    Create spellbinding UX copy that ignites a sense of wonder and creates a deep connection
+                    with your users through personalized and dynamically tailored experiences with Prowriting's AI.</p>
+            </div>
+            <div
+                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-x-8 mb-12">
+                <div
+                    class="relative flex flex-col justify-between w-full overflow-hidden border pt-9 pl-9 sm:pt-12 sm:pl-12 md:flex-row md:w-2/3 text-start bg-windows rounded-4xl border-windows">
+                    <img class="absolute top-0 opacity-50 right-2 -z-10" src="/public/img/bg-6.svg" alt="bg circle 6">
+                    <div class="w-full md:w-1/2 pb-[30px]">
+                        <div class="pr-9 sm:pr-10 mb-7">
+                            <h2 class="mb-4 text-title-windows">Adopt and Personalize Brand
+                                Style</h2>
+                            <p class="text-desc-windows">Easily reference and
+                                adopt your favorite brand's writing style and tone.</p>
+                        </div>
+                        <div class="hidden mb-6 sm:flex sm:flex-col">
+                            <small class="mb-3 text-sm font-normal text-neutral-gray-200">header-title</small>
+                            <p
+                                class="text-neutral-white font-normal text-[20px] leading-[30px] pt-4 pb-2.5 px-2 border border-[#0E8CE9]">
+                                Create or login an account to join member and get more benefits!
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center pr-9 sm:pr-0">
+                            <div class="flex flex-wrap items-center justify-center gap-1">
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="" src="/public/img/airbnb-logo.png" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/image 25.png" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/ic_baseline-apple.svg" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/logos_figma.svg" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/gojek.svg" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/image 23.png" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/Vector.svg" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/devicon_slack.svg" alt="">
+                                </button>
+                                <button class="w-1/3 logo-item sm:w-1/5">
+                                    <img class="mx-auto" src="/public/img/image 24.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="relative hidden w-full sm:flex md:w-1/2">
+                        <img class="absolute bottom-0 w-full" src="/public/img/image 37.png" alt="image">
+                    </div>
+                </div>
+                <div
+                    class="relative flex-row items-center w-full pt-12 pb-10 overflow-hidden px-9 sm:px-12 md:flex-col md:w-1/3 bg-windows rounded-4xl border-windows">
+                    <img class="absolute top-0 opacity-50 -left-1 -z-10" src="/public/img/bg-7.svg" alt="bg circle 7">
+                    <div class="text-start mb-28">
+                        <h2 class="mb-4 text-title-windows">Delegate repetitive writing tasks to AI.</h2>
+                        <p class="text-desc-windows">Spend more time on strategic
+                            tasks like research, information architecture, stakeholder management, etc.</p>
+                    </div>
+                    <ul
+                        class="list-[square] text-lg sm:text-xl font-bold text-neutral-white leading-5 sm:leading-6 text-start mb-4 space-y-8 pl-16">
+                        <li>Input examples</li>
+                        <li class="ml-8">Prowriting’s tuning</li>
+                        <li class="ml-16">Ready to use!</li>
+                    </ul>
+                    <img class="absolute h-36 sm:h-40 sm:w-40 w-36 -bottom-6 -left-6" src="/public/img/magic-wand.png"
+                        alt="magic-wand">
+                    <img class="absolute h-42 w-42 -bottom-[54px] -left-[54px] sm:-bottom-10 sm:-left-10 magic-wand-personal-glow"
+                        src="/public/img/magic-wan-glow.png" alt="magic-wand">
+                </div>
+            </div>
+
+            <button type="button" class="flex mx-auto mb-20 button-cta">
+                <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                        stroke="#2B2B2B" stroke-width="1.5" />
+                </svg>
+                See the Magic
+            </button>
+
+        </section>
+
+        <section id="marketing-product" class="flex flex-col justify-center w-full mx-auto mb-10 text-center">
+
+            <div class="px-4 pt-20 mb-12 sm:px-32 lg:px-64">
+                <h1 class="mb-4 text-title-section">
+                    Bridging the gap <span class="title-text">between marketing and product design team.</span>
+                </h1>
+                <p class="text-desc-section">
+                    Craft marketing materials with your brand's voice, style, and terms, ensuring consistency across
+                    all copywriting whether for marketing or product design with Prowriting's help!</p>
+            </div>
+            <div
+                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-y-0 sm:space-x-8 mb-12">
+                <div
+                    class="relative flex-row items-center w-full px-12 pt-12 pb-16 md:flex-col md:w-1/3 bg-windows rounded-4xl border-windows">
+                    <img class="absolute bottom-0 right-0 opacity-50 -z-10" src="/public/img/bg-8.svg"
+                        alt="bg circle 8">
+                    <div class="mb-6 text-start">
+                        <h2 class="text-title-windows">Take your team to the next level.
+                        </h2>
+                    </div>
+                    <ul
+                        class="list-none text-[20px] font-bold text-neutral-gray-200 leading-6 text-start space-y-8 sm:text-xl text-base">
+                        <li class="flex items-center">
+                            <svg class="w-12 h-12 mr-4" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23.25 14.25C23.25 14.4489 23.171 14.6397 23.0303 14.7803C22.8897 14.921 22.6989 15 22.5 15H21V16.5C21 16.6989 20.921 16.8897 20.7803 17.0303C20.6397 17.171 20.4489 17.25 20.25 17.25C20.0511 17.25 19.8603 17.171 19.7197 17.0303C19.579 16.8897 19.5 16.6989 19.5 16.5V15H18C17.8011 15 17.6103 14.921 17.4697 14.7803C17.329 14.6397 17.25 14.4489 17.25 14.25C17.25 14.0511 17.329 13.8603 17.4697 13.7197C17.6103 13.579 17.8011 13.5 18 13.5H19.5V12C19.5 11.8011 19.579 11.6103 19.7197 11.4697C19.8603 11.329 20.0511 11.25 20.25 11.25C20.4489 11.25 20.6397 11.329 20.7803 11.4697C20.921 11.6103 21 11.8011 21 12V13.5H22.5C22.6989 13.5 22.8897 13.579 23.0303 13.7197C23.171 13.8603 23.25 14.0511 23.25 14.25ZM5.25001 6.75H6.75001V8.25C6.75001 8.44891 6.82903 8.63968 6.96968 8.78033C7.11033 8.92098 7.3011 9 7.50001 9C7.69892 9 7.88969 8.92098 8.03034 8.78033C8.17099 8.63968 8.25001 8.44891 8.25001 8.25V6.75H9.75001C9.94892 6.75 10.1397 6.67098 10.2803 6.53033C10.421 6.38968 10.5 6.19891 10.5 6C10.5 5.80109 10.421 5.61032 10.2803 5.46967C10.1397 5.32902 9.94892 5.25 9.75001 5.25H8.25001V3.75C8.25001 3.55109 8.17099 3.36032 8.03034 3.21967C7.88969 3.07902 7.69892 3 7.50001 3C7.3011 3 7.11033 3.07902 6.96968 3.21967C6.82903 3.36032 6.75001 3.55109 6.75001 3.75V5.25H5.25001C5.0511 5.25 4.86033 5.32902 4.71968 5.46967C4.57903 5.61032 4.50001 5.80109 4.50001 6C4.50001 6.19891 4.57903 6.38968 4.71968 6.53033C4.86033 6.67098 5.0511 6.75 5.25001 6.75ZM17.25 18H16.5V17.25C16.5 17.0511 16.421 16.8603 16.2803 16.7197C16.1397 16.579 15.9489 16.5 15.75 16.5C15.5511 16.5 15.3603 16.579 15.2197 16.7197C15.079 16.8603 15 17.0511 15 17.25V18H14.25C14.0511 18 13.8603 18.079 13.7197 18.2197C13.579 18.3603 13.5 18.5511 13.5 18.75C13.5 18.9489 13.579 19.1397 13.7197 19.2803C13.8603 19.421 14.0511 19.5 14.25 19.5H15V20.25C15 20.4489 15.079 20.6397 15.2197 20.7803C15.3603 20.921 15.5511 21 15.75 21C15.9489 21 16.1397 20.921 16.2803 20.7803C16.421 20.6397 16.5 20.4489 16.5 20.25V19.5H17.25C17.4489 19.5 17.6397 19.421 17.7803 19.2803C17.921 19.1397 18 18.9489 18 18.75C18 18.5511 17.921 18.3603 17.7803 18.2197C17.6397 18.079 17.4489 18 17.25 18ZM20.5603 7.5L7.50001 20.5603C7.21873 20.8414 6.83735 20.9993 6.4397 20.9993C6.04204 20.9993 5.66066 20.8414 5.37938 20.5603L3.43876 18.6216C3.29943 18.4823 3.18892 18.3169 3.11351 18.1349C3.03811 17.9529 2.9993 17.7578 2.9993 17.5608C2.9993 17.3638 3.03811 17.1687 3.11351 16.9867C3.18892 16.8047 3.29943 16.6393 3.43876 16.5L16.5 3.43969C16.6393 3.30036 16.8047 3.18984 16.9867 3.11444C17.1687 3.03904 17.3638 3.00023 17.5608 3.00023C17.7578 3.00023 17.9529 3.03904 18.1349 3.11444C18.3169 3.18984 18.4823 3.30036 18.6216 3.43969L20.5603 5.37844C20.6996 5.51773 20.8102 5.6831 20.8856 5.86511C20.961 6.04713 20.9998 6.24221 20.9998 6.43922C20.9998 6.63623 20.961 6.83131 20.8856 7.01332C20.8102 7.19533 20.6996 7.36071 20.5603 7.5ZM19.5 6.43969L17.5603 4.5L14.5603 7.5L16.5 9.43969L19.5 6.43969Z"
+                                    fill="white" />
+                            </svg>
+                            Write copies for your marketing needs 10x faster.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-12 h-12 mr-4" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.9613 2.41027C19.8719 2.33942 19.7673 2.29019 19.6557 2.26645C19.5442 2.2427 19.4286 2.24508 19.3181 2.2734L7.31813 5.2734C7.15603 5.31392 7.0121 5.4074 6.90918 5.53903C6.80626 5.67065 6.75024 5.83288 6.75 5.99996V16.3218C6.12428 15.9038 5.37678 15.7068 4.62628 15.7623C3.87579 15.8177 3.16535 16.1224 2.60788 16.6279C2.05041 17.1334 1.67788 17.8108 1.54949 18.5523C1.4211 19.2938 1.54421 20.0569 1.89927 20.7204C2.25433 21.384 2.82096 21.9098 3.50912 22.2143C4.19728 22.5189 4.96749 22.5847 5.69735 22.4014C6.42721 22.218 7.07485 21.796 7.53736 21.2023C7.99986 20.6087 8.2507 19.8775 8.25 19.125V10.3359L18.75 7.7109V13.3218C18.1243 12.9038 17.3768 12.7068 16.6263 12.7623C15.8758 12.8177 15.1654 13.1224 14.6079 13.6279C14.0504 14.1334 13.6779 14.8108 13.5495 15.5523C13.4211 16.2938 13.5442 17.0569 13.8993 17.7204C14.2543 18.384 14.821 18.9098 15.5091 19.2143C16.1973 19.5189 16.9675 19.5847 17.6973 19.4014C18.4272 19.218 19.0749 18.796 19.5374 18.2023C19.9999 17.6087 20.2507 16.8775 20.25 16.125V2.99996C20.2497 2.88621 20.2236 2.774 20.1736 2.67184C20.1236 2.56968 20.051 2.48023 19.9613 2.41027Z"
+                                    fill="white" />
+                            </svg>
+                            Unify the style and terms between UX and marketing copies.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-12 h-12 mr-4" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.0084 5.37939C12.0505 4.79735 12.2427 4.23616 12.5663 3.75058C12.89 3.26501 13.334 2.87164 13.8551 2.6089C14.3761 2.34615 14.9564 2.22299 15.5393 2.25145C16.1221 2.27991 16.6876 2.45901 17.1806 2.77127C17.237 2.80815 17.2824 2.85952 17.312 2.92C17.3417 2.98048 17.3545 3.04783 17.3491 3.11497C17.3437 3.18211 17.3204 3.24657 17.2815 3.30156C17.2426 3.35656 17.1896 3.40007 17.1281 3.42752C16.2711 3.81308 15.5437 4.43786 15.0331 5.2268C14.5226 6.01573 14.2507 6.93529 14.25 7.87502C14.25 7.9847 14.25 8.09439 14.2612 8.2022C14.2664 8.27035 14.2529 8.33861 14.2221 8.39961C14.1913 8.46062 14.1444 8.51204 14.0865 8.54833C14.0285 8.58462 13.9618 8.60439 13.8935 8.60552C13.8252 8.60664 13.7578 8.58907 13.6987 8.5547C13.1463 8.23868 12.6944 7.77286 12.3953 7.21101C12.0962 6.64917 11.9621 6.0142 12.0084 5.37939ZM22.5 15.0572C22.5013 15.4858 22.3826 15.9061 22.1573 16.2707C21.9319 16.6352 21.609 16.9293 21.225 17.1197L21.1838 17.1385L17.5434 18.6891C17.5075 18.7049 17.4701 18.7175 17.4319 18.7266L11.4319 20.2266C11.3724 20.2419 11.3114 20.2497 11.25 20.25H1.5C1.10218 20.25 0.720644 20.092 0.43934 19.8107C0.158035 19.5294 0 19.1478 0 18.75V15C0 14.6022 0.158035 14.2207 0.43934 13.9394C0.720644 13.6581 1.10218 13.5 1.5 13.5H4.18969L6.31031 11.3785C6.58838 11.0991 6.91904 10.8777 7.28319 10.7269C7.64733 10.5762 8.03775 10.499 8.43188 10.5H13.125C13.5212 10.5 13.9122 10.5896 14.2688 10.7622C14.6254 10.9348 14.9383 11.1858 15.1841 11.4965C15.4298 11.8072 15.6021 12.1695 15.6879 12.5563C15.7738 12.943 15.7709 13.3442 15.6797 13.7297L19.6022 12.8278C19.9437 12.7374 20.3013 12.7266 20.6477 12.7962C20.994 12.8659 21.3197 13.0141 21.5996 13.2295C21.8796 13.4449 22.1064 13.7217 22.2625 14.0386C22.4186 14.3555 22.4999 14.704 22.5 15.0572ZM21 15.0572C20.9999 14.9332 20.9712 14.8109 20.9162 14.6998C20.8611 14.5886 20.7812 14.4917 20.6827 14.4164C20.5841 14.3412 20.4695 14.2896 20.3478 14.2658C20.2261 14.242 20.1006 14.2465 19.9809 14.2791L19.9519 14.2866L13.6706 15.7313C13.6155 15.7436 13.5593 15.7499 13.5028 15.75H10.5C10.3011 15.75 10.1103 15.671 9.96967 15.5303C9.82902 15.3897 9.75 15.1989 9.75 15C9.75 14.8011 9.82902 14.6103 9.96967 14.4697C10.1103 14.329 10.3011 14.25 10.5 14.25H13.125C13.4234 14.25 13.7095 14.1315 13.9205 13.9205C14.1315 13.7095 14.25 13.4234 14.25 13.125C14.25 12.8266 14.1315 12.5405 13.9205 12.3295C13.7095 12.1185 13.4234 12 13.125 12H8.43188C8.23482 11.9994 8.03961 12.0379 7.85758 12.1134C7.67555 12.1889 7.51035 12.2998 7.37156 12.4397L5.25 14.5603V18.75H11.1562L17.0091 17.2866L20.5716 15.7697C20.7012 15.7014 20.8097 15.5989 20.8852 15.4733C20.9608 15.3477 21.0005 15.2038 21 15.0572ZM15.75 7.87502C15.75 8.54253 15.9479 9.19505 16.3188 9.75007C16.6896 10.3051 17.2167 10.7377 17.8334 10.9931C18.4501 11.2486 19.1287 11.3154 19.7834 11.1852C20.4381 11.0549 21.0395 10.7335 21.5115 10.2615C21.9835 9.7895 22.3049 9.18813 22.4352 8.53345C22.5654 7.87876 22.4985 7.20016 22.2431 6.58346C21.9876 5.96676 21.5551 5.43966 21 5.06881C20.445 4.69796 19.7925 4.50002 19.125 4.50002C18.2299 4.50002 17.3715 4.8556 16.7385 5.48853C16.1056 6.12147 15.75 6.97991 15.75 7.87502Z"
+                                    fill="white" />
+                            </svg>
+                            Write engaging copies that can boost your conversion rate.
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="relative flex flex-col justify-between w-full overflow-hidden border pt-9 pl-9 sm:px-12 sm:pt-12 md:w-2/3 text-start bg-windows rounded-4xl border-windows">
+                    <img class="absolute bottom-0 left-0 opacity-50 -z-10" src="/public/img/bg-9.svg" alt="bg circle 9">
+                    <h2 class="mb-12 sm:mb-20 sm:pr-10 text-title-windows">
+                        With Prowriting, achieve a unified voice in all your UX and marketing copies.
+                    </h2>
+                    <div class="">
+                        <div class="w-full carousel-bridging-container">
+                            <div class="carousel-bridging">
+                                <div class="carousel-bridging-slide active">
+                                    <h4
+                                        class="text-base sm:text-[20px] font-bold text-neutral-gray-200 sm:leading-6 mb-4">
+                                        Marketing
+                                        materials</h4>
+                                    <img class="rounded-b-lg box-shadow-primary " src="/public/img/image 90.png"
+                                        style="width: 100%; height: 42vh; object-fit: cover; object-position: top;"
+                                        alt="image 42">
+
+                                </div>
+                                <div class="carousel-bridging-slide">
+                                    <h4
+                                        class="text-base sm:text-[20px] font-bold text-neutral-gray-200 sm:leading-6 mb-4">
+                                        Product design</h4>
+                                    <img class="w-full rounded-b-lg box-shadow-primary" src="/public/img/image 91.png"
+                                        style="width: 100%; height: 42vh; object-fit: cover; object-position: top;"
+                                        alt="image 42">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="flex mx-auto mb-20 button-cta">
+                <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                        stroke="#2B2B2B" stroke-width="1.5" />
+                </svg>
+                Coming Soon
+            </button>
+
+        </section>
+
+        <section id="testimonial" class="flex flex-col justify-center w-full mx-auto mb-10 text-center">
+
+            <div class="px-4 pt-20 mb-12">
+                <h1 class="mb-12 sm:px-72 text-title-section">
+                    Wonder why professionals and teams made the <span class="title-text">switch to Prowriting?</span>
+                </h1>
+                <div
+                    class="flex-col items-center justify-center hidden px-4 sm:flex sm:flex-row sm:space-x-12 sm:px-16">
+                    <div
+                        class="w-full sm:w-[448px] h-[260px] flex flex-col bg-windows py-10 px-6 justify-center mx-auto rounded-4xl border-windows relative ">
+                        <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-10.svg"
+                            alt="bg circle 10">
+                        <p class="mb-6 text-base font-normal text-neutral-white">“Hi! I’m a copywriter and I’m positive
+                            that your Prowriting is a brilliant idea for my work. We spend a lot of time proofreading
+                            and double-checking texts, so your tool is incredibly relevant in my sphere. Congrats!!”</p>
+                        <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                            <img alt="profile 1" src="/public/img/image 33.png"
+                                class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                            Julia, Senior Copywriter
+                        </div>
+                    </div>
+                    <div
+                        class="w-full sm:w-[448px] h-[260px] flex flex-col bg-windows py-10 px-6 justify-center mx-auto rounded-4xl border-windows relative">
+                        <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-10.svg"
+                            alt="bg circle 10">
+                        <p class="mb-6 text-base font-normal text-neutral-white">Extremely excited to have found this
+                            tool and will definitely be using it daily to speed up our UX projects and presentations
+                            that we're working on in Figma! Thank you, for making this happen and saving our lives we've
+                            been wanting something like this for ages!</p>
+                        <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                            <img alt="profile 1" src="/public/img/image 34.png"
+                                class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                            Leigh, UX Lead
+                        </div>
+                    </div>
+                    <div
+                        class="w-full sm:w-[448px] h-[260px] flex flex-col bg-windows py-10 px-6 justify-center mx-auto rounded-4xl border-windows relative">
+                        <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-10.svg"
+                            alt="bg circle 10">
+                        <p class="mb-6 text-base font-normal text-neutral-white">Processes accelerator!</p>
+                        <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                            <img alt="profile 1" src="/public/img/image 35.png"
+                                class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                            Polina, Senior Copywriter
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 sm:hidden">
+                    <div class="w-full carousel-testimonial-container">
+                        <div class="carousel-testimonial">
+                            <div class="carousel-testimonial-slide active">
+                                <div
+                                    class="w-full h-[260px] flex flex-col bg-windows py-9 px-6 justify-center mx-auto rounded-[32px] sm:rounded-4xl border border-windows">
+                                    <p class="mb-6 text-sm font-normal sm:text-base text-neutral-white">“Hi! I’m a
+                                        copywriter and I’m positive that your Prowriting is a brilliant idea for my
+                                        work. We
+                                        spend a lot of time proofreading and double-checking texts, so your tool is
+                                        incredibly relevant in my sphere. Congrats!!”</p>
+                                    <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                                        <img alt="profile 1" src="/public/img/image 33.png"
+                                            class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                                        Julia, Senior Copywriter
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-testimonial-slide">
+                                <div
+                                    class=" w-full h-[260px] flex flex-col bg-windows py-10 px-6 justify-center mx-auto rounded-[32px] sm:rounded-4xl border border-windows">
+                                    <p class="mb-6 text-sm font-normal sm:text-base text-neutral-white">Extremely
+                                        excited to
+                                        have found this
+                                        tool and will definitely be using it daily to speed up our UX projects and
+                                        presentations
+                                        that we're working on in Figma! Thank you, for making this happen and saving our
+                                        lives we've
+                                        been wanting something like this for ages!</p>
+                                    <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                                        <img alt="profile 2" src="/public/img/image 34.png"
+                                            class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                                        Leigh, UX Lead
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-testimonial-slide">
+                                <div
+                                    class=" w-full h-[260px] flex flex-col bg-windows py-10 px-6 justify-center mx-auto rounded-[32px] sm:rounded-4xl border border-windows">
+                                    <p class="mb-6 text-sm font-normal sm:text-base text-neutral-white">Processes
+                                        accelerator!</p>
+                                    <div class="flex items-center mx-auto text-base font-bold text-neutral-white">
+                                        <img alt="profile 3" src="/public/img/image 35.png"
+                                            class="object-cover w-10 h-10 mx-auto mr-5 rounded-full" />
+                                        Polina, Senior Copywriter
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel indicators -->
+                    <div class="carousel-testimonial-indicators">
+                        <span class="carousel-testimonial-indicator"></span>
+                        <span class="carousel-testimonial-indicator"></span>
+                        <span class="carousel-testimonial-indicator"></span>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="relative bottom-0 w-full mx-auto overflow-hidden text-center">
+            <div class="flex flex-col items-start justify-between sm:px-24 sm:flex-row">
+                <div class="pl-4 sm:pl-0">
+                    <img src="/public/img/logo-prowriting.png" class="w-28 sm:px-1 sm:py-3.5" alt="Prowriting Logo">
+                    <p class="mb-8 text-sm font-semibold leading-6 text-neutral-gray-200">Magical UX writing tools from
+                        the future</p>
+                    <button type="button" class="flex mb-20 button-cta">
+                        <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
+                                stroke="#2B2B2B" stroke-width="1.5" />
+                        </svg>
+                        See the Magic
+                    </button>
+                </div>
+                <div class="flex justify-between px-4 mb-10 space-x-20 text-start sm:px-0">
+                    <ul class="space-y-4 text-sm font-normal leading-6 list-none text-neutral-gray-200">
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Prowriting vs ChatGPT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Prowriting for UX Designer</li>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Prowriting for UX Leader</li>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Prowriting for Startup Executives
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="space-y-4 text-sm font-normal leading-6 list-none text-neutral-gray-200">
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Pricing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Contact us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:hover:text-[#5C4BF6]">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative px-4 mb-12 overflow-hidden sm:px-24">
+                <p class="text-sm font-normal sm:ml-80 text-start text-neutral-gray-200">© 2023 - Prowriting, All rights
+                    reserved.</p>
+            </div>
+            <img class="absolute w-[500px] opacity-25 -bottom-36 sm:bottom-[-250px] left-0 transform -translate-x-1 -z-10"
+                src="../public/img/accent.png" alt="Ellipse">
+        </footer>
+    </div>
+    <div class="absolute bottom-0 right-0 w-1/4 pt-32 gradient-shadow -z-50">
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
