@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
 </head>
 
 <body class="relative">
@@ -58,7 +61,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="fixed top-0 left-0 z-10 items-center justify-center hidden w-screen h-screen pr-4 mx-auto text-center sm:order-1 bg-gradient-radial"
+                <div class="fixed top-0 left-0 z-10 items-center justify-center hidden w-screen h-screen pr-4 text-center bg-gradient-radial"
                     id="navbar-mobile">
                     <div class="flex justify-end w-full">
                         <button class="py-6 pr-6 text-neutral-white" id="closeButton">
@@ -71,7 +74,7 @@
                     </div>
                     <div class="relative flex flex-col justify-between w-full h-screen box-shadows-xl">
                         <ul
-                            class="flex flex-col mx-5 text-xl font-bold border-t border-b divide-y divide-gray-50 border-gray-50">
+                            class="flex flex-col mx-5 text-xl font-bold border-t border-b divide-y divide-gray-50 divide-opacity-20 border-gray-50 border-opacity-20">
                             <li>
                                 <a href="#" class="block w-full py-8 px-[18px] text-neutral-gray hover:text-[#5C4BF6]"
                                     aria-current="page">Home</a>
@@ -149,10 +152,10 @@
                 class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-y-0 sm:space-x-8 mb-12">
 
                 <div
-                    class="flex flex-col justify-between w-full px-10 pt-10 sm:pt-12 sm:pl-12 md:flex-row md:w-2/3 text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative">
+                    class="flex flex-col justify-between w-full px-10 sm:pl-12 md:flex-row md:w-2/3 text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative">
                     <img class="absolute bottom-0 left-0 opacity-20 -z-10" src="/public/img/bg-1.svg"
                         alt="bg circle -1">
-                    <div class="w-full pb-8 md:w-1/2">
+                    <div class="w-full pt-10 pb-8 md:w-1/2 sm:pt-12">
                         <div class="sm:mb-7">
                             <h2 class="pr-10 text-title-windows">Generate a magical copy for
                                 your design</h2>
@@ -166,20 +169,23 @@
                                 class="text-neutral-white font-normal text-[20px] leading-[30px] pt-4 pb-2.5 px-2 border border-[#0E8CE9]">
                                 Create or login an account to join member and get more benefits!</p>
                         </div>
-                        <button type="button"
-                            class="hidden sm:flex items-center text-neutral-white bg-primary text-base font-bold rounded-5xl px-[18px] py-2.5 text-center box-shadows-xs icon-hover">
-                            <svg class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <button type="button" id="generateButton"
+                            class="hidden sm:flex items-center text-neutral-white bg-primary hover:bg-white hover:text-[#5C4BF6] text-base font-bold rounded-5xl px-[18px] py-2.5 text-center box-shadows-xs icon-hover icon-button-windows">
+                            <svg id="generateIcon" class="w-6 h-6 mr-2" width="25" height="24" viewBox="0 0 25 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
                                     stroke="#FFF" stroke-width="1.5" />
                             </svg>
-                            Generate
+                            <span id="generateText">Generate</span>
                         </button>
+
                     </div>
                     <div class="relative w-full overflow-hidden md:w-1/2">
-                        <img class="sm:absolute bottom-0 -mb-20 sm:mb-0 w-[264px] sm:w-full"
-                            src="/public/img/image 37.png" alt="image">
+                        <img id="imageGenerate" class="absolute hidden w-full sm:block top-10"
+                            src="/public/img/generate-copy-image 38.png" alt="generate-copy-image 38">
+                        <img class="sm:hidden bottom-0 -mb-20 sm:mb-0 w-[264px]" src="/public/img/image 37.png"
+                            alt="image">
                     </div>
                 </div>
                 <div
@@ -187,20 +193,21 @@
                     <img class="absolute top-0 right-0 opacity-20 -z-10" src="/public/img/bg-2.svg" alt="bg circle 2">
                     <div class="mb-12 text-start">
                         <h2 class="text-title-windows">Delegate repetitive writing tasks to AI.</h2>
-                        <p class="text-desc-windows">Spend more time on strategic tasks like research, information
+                        <p class="text-desc-windows animation-text">Spend more time on strategic tasks like research,
+                            information
                             architecture, stakeholder management, etc.</p>
                     </div>
-                    <img class="mx-auto w-36 h-36 sm:w-40 sm:h-40 magic-wand-image" src="/public/img/magic-wand.png"
+                    <img class="mx-auto w-36 h-36 sm:w-40 sm:h-40 magic-wand-image" src="/public/img/magic-wan.png"
                         alt="magic-wand">
-                    <img class="sm:translate-x-4 prowiriting-image w-[250px]" src="/public/img/prowriting.png"
-                        alt="prowriting">
+                    <img class="transform transition-transform prowiriting-image w-[308px]"
+                        src="/public/img/prowriting-delegate.png" alt="prowriting">
                 </div>
             </div>
 
             <!-- row 2 -->
             <div class="flex flex-col md:flex-row w-full mx-auto px-4 sm:px-32 lg:px-[100px] mb-12">
                 <div
-                    class="flex flex-col justify-start w-full pl-9 pr-8 pt-9 sm:pt-12 sm:pl-12 sm:pr-0 md:flex-row text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative">
+                    class="flex flex-col justify-start w-full pl-9 pr-8 pt-9 sm:pt-12 sm:pl-12 sm:pr-0 md:flex-row text-start bg-windows rounded-[32px] sm:rounded-4xl border-windows relative overflow-y-hidden">
                     <img class="absolute top-0 left-0 opacity-20 -z-10" src="/public/img/bg-3.svg" alt="bg circle 3">
                     <div class="w-full justify-items-stretch">
                         <div class="mb-8 sm:pr-64 sm:mb-10">
@@ -211,9 +218,15 @@
                         <img class="hidden w-full sm:block justify-self-end" src="/public/img/image 41.png"
                             alt="image 41">
                     </div>
-                    <div class="relative w-full overflow-hidden sm:overflow-visible md:w-1/2">
-                        <img class="top-0 h-full -mb-10 sm:absolute -left-10 sm:-mb-0" src="/public/img/image 40.png"
-                            alt="image 40">
+                    <div class="proofread-container relative w-full md:w-1/2">
+                        <button id="proofreadButton" class="">
+                            <img id="proofreadImageSecond" class="top-0 -left-14 absolute sm:block w-full hidden" src="/public/img/proofreading-state 2.png"
+                            alt="proofreading-state 2">
+                            <img id="proofreadImageFirst" class="top-0 -left-14 absolute sm:block w-full hidden" src="/public/img/proofreading-state 1.png"
+                            alt="proofreading-state 1">
+                        </button>
+                        <img class="top-0 h-full -mb-10 sm:hidden -left-10 sm:-mb-0" src="/public/img/image 40.png"
+                        alt="image 40">
                     </div>
                 </div>
             </div>
@@ -234,12 +247,12 @@
                         <div class="relative -ml-3">
                             <img class=" w-36 sm:w-40 figma-icon" src="/public/img/figma-icon.png" alt="FIgma icon">
                             <img class="absolute top-0 left-0 w-36 sm:w-40 glow-figma-icon"
-                                src="/public/img/figma-icon-glow.png" alt="FIgma icon">
+                                src="/public/img/figma-icon-glow.png" alt="figma icon glow">
                         </div>
                         <div class="relative -mr-3">
-                            <img class=" w-36 sm:w-40 magic-wand" src="/public/img/magic-wand.png" alt="magic-wand">
-                            <img class="absolute top-0 left-0 w-36 sm:w-40 glow-magic-wand"
-                                src="/public/img/magic-wan-glow.png" alt="FIgma icon">
+                            <img class=" w-36 sm:w-40 magic-wand" src="/public/img/magic-wan.png" alt="magic-wand">
+                            <img class="absolute top-0 left-0 w-36 sm:w-full glow-magic-wand"
+                                src="/public/img/magic-wan-glow.png" alt="magic wan glow">
                         </div>
                     </div>
                 </div>
@@ -288,7 +301,7 @@
                     with your users through personalized and dynamically tailored experiences with Prowriting's AI.</p>
             </div>
             <div
-                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-x-8 mb-12">
+                class="flex flex-col md:flex-row w-full items-start mx-auto justify-center px-4 sm:px-32 lg:px-[100px] space-y-10 sm:space-y-0 sm:space-x-8 mb-12">
                 <div
                     class="relative flex flex-col justify-between w-full overflow-hidden border pt-9 pl-9 sm:pt-12 sm:pl-12 md:flex-row md:w-2/3 text-start bg-windows rounded-4xl border-windows">
                     <img class="absolute top-0 opacity-50 right-2 -z-10" src="/public/img/bg-6.svg" alt="bg circle 6">
@@ -308,32 +321,35 @@
                         </div>
                         <div class="flex flex-col items-center pr-9 sm:pr-0">
                             <div class="flex flex-wrap items-center justify-center gap-1">
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="" src="/public/img/airbnb-logo.png" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/image 25.png" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/ic_baseline-apple.svg" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/logos_figma.svg" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/gojek.svg" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/image 23.png" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/Vector.svg" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/devicon_slack.svg" alt="">
                                 </button>
-                                <button class="w-1/3 logo-item sm:w-1/5">
+                                <button class="logo-item brand-button" onclick="handleButtonClick(this)">
                                     <img class="mx-auto" src="/public/img/image 24.png" alt="">
+                                </button>
+                                <button class="logo-item hidden-reset" id="new-button" onclick="handleResetButtonClick(this)">
+                                    <img class="mx-auto" src="/public/img/resend.svg" alt="resend icon">
                                 </button>
                             </div>
                         </div>
@@ -354,12 +370,12 @@
                             tasks like research, information architecture, stakeholder management, etc.</p>
                     </div>
                     <ul
-                        class="list-[square] text-lg sm:text-xl font-bold text-neutral-white leading-5 sm:leading-6 text-start mb-4 space-y-8 pl-16">
+                        class="list-[square] text-lg sm:text-xl font-bold text-neutral-white leading-5 sm:leading-6 text-start mb-4 space-y-8 ml-16">
                         <li>Input examples</li>
                         <li class="ml-8">Prowriting’s tuning</li>
                         <li class="ml-16">Ready to use!</li>
                     </ul>
-                    <img class="absolute h-36 sm:h-40 sm:w-40 w-36 -bottom-6 -left-6" src="/public/img/magic-wand.png"
+                    <img class="absolute h-36 sm:h-40 sm:w-40 w-36 -bottom-6 -left-6" src="/public/img/magic-wan.png"
                         alt="magic-wand">
                     <img class="absolute h-42 w-42 -bottom-[54px] -left-[54px] sm:-bottom-10 sm:-left-10 magic-wand-personal-glow"
                         src="/public/img/magic-wan-glow.png" alt="magic-wand">
@@ -653,7 +669,7 @@
     </div>
     <div class="absolute bottom-0 right-0 w-1/4 pt-32 gradient-shadow -z-50">
     </div>
-    <script src="/js/script.js"></script>
+    <script src="../dist/script.js"></script>
 </body>
 
 </html>
