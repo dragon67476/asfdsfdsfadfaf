@@ -58,7 +58,7 @@
     setInterval(() => {
       slideIndexBridging++;
       showSlideBridging(slideIndexBridging);
-    }, 3000);
+    }, 3200);
     // End 
 
 
@@ -92,7 +92,7 @@
     setInterval(() => {
       slideIndextestimonial++;
       showSlidetestimonial(slideIndextestimonial);
-    }, 3000);
+    }, 3200);
     // End
 
 
@@ -102,36 +102,53 @@
     const generateText = document.getElementById('generateText');
     const generateIcon = document.getElementById('generateIcon');
 
-    let isGenerated = false;
-
     generateButton.addEventListener('click', () => {
-      if (!isGenerated) {
-        // Saat tombol Generate diklik pertama kali
+      if (generateText.textContent === 'Generate') {
         setTimeout(() => {
           imageGenerate.style.animation = 'moveImage 3s ease-out forwards';
-        }, 800); // Delay 800ms sebelum memulai animasi
-        generateIcon.innerHTML = `
-          <svg id="generateIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z" fill="rgba(255,255,255,1)"></path>
-          </svg>
-        `;
-        generateText.textContent = 'Restart';
-      } else {
-        // Saat tombol Restart diklik
+        }, 800);
+
+        generateText.textContent = 'Rewrite';
+      } else if (generateText.textContent === 'Restart') {
         imageGenerate.style.animation = 'resetAnimation 3s ease-out forwards'; // Animasi reset
         setTimeout(() => {
           imageGenerate.style.animation = ''; // Hapus animasi agar bisa dipicu lagi
+
+          const placeholderGenerate = document.getElementById('placeholdeGenerate');
+          placeholderGenerate.innerHTML = `
+            <div class="lefttop dot"></div>
+            <div class="leftbottom dot"></div>
+            <div class="righttop dot"></div>
+            <div class="rightbottom dot"></div>
+            Create or login an account to join member and get more benefits!
+          `;
+
+          generateIcon.innerHTML = `
+            <svg id="generateIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z" fill="rgba(255,255,255,1)"></path>
+            </svg>
+          `;
+          generateText.textContent = 'Generate';
         }, 1000); // Waktu sesuai dengan durasi animasi reset
-        generateIcon.innerHTML = `
-          <!-- Isi elemen SVG awal -->
-          <path
-              d="M12.3222 19.3679C11.7642 20.174 10.5 19.7791 10.5 18.7987V15C10.5 14.4477 10.0523 14 9.5 14H8.5C7.94772 14 7.5 13.5523 7.5 13V3C7.5 2.44772 7.94772 2 8.5 2H16.1743C16.8386 2 17.3183 2.6359 17.1358 3.27472L15.8642 7.72528C15.6817 8.36409 16.1614 9 16.8257 9H17.5914C18.3981 9 18.8728 9.90598 18.4136 10.5692L12.3222 19.3679Z"
-              stroke="#FFF" stroke-width="1.5" />
+      } else if (generateText.textContent === 'Rewrite') {
+        // Action when button is in "Rewrite" state and clicked again
+        const placeholderGenerate = document.getElementById('placeholdeGenerate');
+        placeholderGenerate.innerHTML = `
+          <div class="lefttop dot"></div>
+          <div class="leftbottom dot"></div>
+          <div class="righttop dot"></div>
+          <div class="rightbottom dot"></div>
+          Join us now! Log in or create an account for exclusive benefits.
         `;
-        generateText.textContent = 'Generate';
+
+        generateIcon.innerHTML = `
+        <svg id="generateIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z" fill="rgba(255,255,255,1)"></path>
+      </svg>
+        `;
+        generateText.textContent = 'Restart';
       }
 
-      isGenerated = !isGenerated;
     });
     // End
 
