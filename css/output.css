@@ -890,6 +890,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-items-stretch {
   justify-items: stretch;
 }
@@ -1168,6 +1172,10 @@ video {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
 }
 
 .text-center {
