@@ -30,35 +30,49 @@
 
     // Start carousel bridging
     const carouselBridging = document.querySelector(".carousel-bridging");
-    const carouselSlidesBridging = document.querySelectorAll(".carousel-bridging-slide");
-    const indicatorsBridging = document.querySelectorAll(".carousel-bridging-indicator");
+const carouselSlidesBridging = document.querySelectorAll(".carousel-bridging-slide");
+const indicatorsBridging = document.querySelectorAll(".carousel-bridging-indicator");
 
-    let slideIndexBridging = 0;
+let slideIndexBridging = 0;
+const totalSlides = carouselSlidesBridging.length;
 
-    function showSlideBridging(index) {
-      if (index < 0) {
-        slideIndexBridging = carouselSlidesBridging.length - 1;
-      } else if (index >= carouselSlidesBridging.length) {
-        slideIndexBridging = 0;
-      }
+function showSlideBridging() {
+  carouselSlidesBridging.forEach((slide, i) => {
+    const offset = (i - slideIndexBridging + totalSlides) % totalSlides;
+    slide.classList.toggle("active", offset === 0);
+  });
 
-      carouselSlidesBridging.forEach((slide, i) => {
-        slide.classList.toggle("active", i === slideIndexBridging);
-      });
+  carouselBridging.style.transform = `translateX(-${slideIndexBridging * 100}%)`;
 
-      carouselBridging.style.transform = `translateX(-${slideIndexBridging * 100}%)`;
+  indicatorsBridging.forEach((indicator_bridging, i) => {
+    indicator_bridging.classList.toggle("active", i === slideIndexBridging);
+  });
+}
 
-      indicatorsBridging.forEach((indicator_bridging, i) => {
-        indicator_bridging.classList.toggle("active", i === slideIndexBridging);
-      });
-    }
+function slideTransition() {
+  const newIndex = (slideIndexBridging + 1) % totalSlides;
 
-    showSlideBridging(slideIndexBridging);
+  if (newIndex === 0) {
+    // Reset transition to the right when starting over
+    carouselBridging.style.transition = "none";
+    carouselBridging.style.transform = `translateX(${100}%)`;
 
-    setInterval(() => {
-      slideIndexBridging++;
-      showSlideBridging(slideIndexBridging);
-    }, 3200);
+    // Allow a small delay before re-enabling the transition
+    setTimeout(() => {
+      carouselBridging.style.transition = "transform 0.8s ease";
+      slideIndexBridging = newIndex;
+      showSlideBridging();
+    }, 200);
+  } else {
+    slideIndexBridging = newIndex;
+    showSlideBridging();
+  }
+}
+
+showSlideBridging();
+
+setInterval(slideTransition, 3200);
+    
     // End 
 
 
