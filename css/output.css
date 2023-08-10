@@ -610,6 +610,10 @@ video {
   top: 2.5rem;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -687,10 +691,6 @@ video {
 
 .mb-24 {
   margin-bottom: 6rem;
-}
-
-.mb-28 {
-  margin-bottom: 7rem;
 }
 
 .mb-4 {
@@ -797,6 +797,10 @@ video {
   width: 2.5rem;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -841,6 +845,10 @@ video {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .-translate-x-1 {
   --tw-translate-x: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -874,6 +882,10 @@ video {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
@@ -890,16 +902,12 @@ video {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .justify-items-stretch {
   justify-items: stretch;
 }
 
-.gap-1 {
-  gap: 0.25rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .space-x-20 > :not([hidden]) ~ :not([hidden]) {
@@ -959,11 +967,6 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
-}
-
-.rounded-b-lg {
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
 }
 
 .rounded-t-lg {
@@ -1102,6 +1105,10 @@ video {
   padding-bottom: 0.625rem;
 }
 
+.pb-36 {
+  padding-bottom: 9rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1168,18 +1175,6 @@ video {
 
 .pt-9 {
   padding-top: 2.25rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
-}
-
-.pb-32 {
-  padding-bottom: 8rem;
-}
-
-.pb-36 {
-  padding-bottom: 9rem;
 }
 
 .text-center {
@@ -2094,6 +2089,47 @@ body {
   margin: 0 auto;
 }
 
+/* Tambahkan animasi saat tombol reset muncul */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Tambahkan animasi saat tombol reset keluar */
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Terapkan animasi masuk dan posisi saat tombol reset muncul */
+
+#buttonReset {
+  animation: slideIn 0.5s forwards;
+}
+
+/* Terapkan animasi keluar saat tombol reset diklik */
+
+#buttonReset.hidden-reset {
+  animation: slideOut 0.5s forwards;
+}
+
+.element-to-animate {
+  opacity: 1;
+  transition: opacity 0.5s, filter 0.5s;
+}
+
 .hover\:bg-\[\#5C4BF6\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(92 75 246 / var(--tw-bg-opacity));
@@ -2484,6 +2520,10 @@ body {
 }
 
 @media (min-width: 1280px) {
+  .xl\:top-0 {
+    top: 0px;
+  }
+
   .xl\:mb-12 {
     margin-bottom: 3rem;
   }
