@@ -30,49 +30,49 @@
 
     // Start carousel bridging
     const carouselBridging = document.querySelector(".carousel-bridging");
-const carouselSlidesBridging = document.querySelectorAll(".carousel-bridging-slide");
-const indicatorsBridging = document.querySelectorAll(".carousel-bridging-indicator");
+    const carouselSlidesBridging = document.querySelectorAll(".carousel-bridging-slide");
+    const indicatorsBridging = document.querySelectorAll(".carousel-bridging-indicator");
 
-let slideIndexBridging = 0;
-const totalSlides = carouselSlidesBridging.length;
+    let slideIndexBridging = 0;
+    const totalSlides = carouselSlidesBridging.length;
 
-function showSlideBridging() {
-  carouselSlidesBridging.forEach((slide, i) => {
-    const offset = (i - slideIndexBridging + totalSlides) % totalSlides;
-    slide.classList.toggle("active", offset === 0);
-  });
+    function showSlideBridging() {
+      carouselSlidesBridging.forEach((slide, i) => {
+        const offset = (i - slideIndexBridging + totalSlides) % totalSlides;
+        slide.classList.toggle("active", offset === 0);
+      });
 
-  carouselBridging.style.transform = `translateX(-${slideIndexBridging * 100}%)`;
+      carouselBridging.style.transform = `translateX(-${slideIndexBridging * 100}%)`;
 
-  indicatorsBridging.forEach((indicator_bridging, i) => {
-    indicator_bridging.classList.toggle("active", i === slideIndexBridging);
-  });
-}
+      indicatorsBridging.forEach((indicator_bridging, i) => {
+        indicator_bridging.classList.toggle("active", i === slideIndexBridging);
+      });
+    }
 
-function slideTransition() {
-  const newIndex = (slideIndexBridging + 1) % totalSlides;
+    function slideTransition() {
+      const newIndex = (slideIndexBridging + 1) % totalSlides;
 
-  if (newIndex === 0) {
-    // Reset transition to the right when starting over
-    carouselBridging.style.transition = "none";
-    carouselBridging.style.transform = `translateX(${100}%)`;
+      if (newIndex === 0) {
+        // Reset transition to the right when starting over
+        carouselBridging.style.transition = "none";
+        carouselBridging.style.transform = `translateX(${100}%)`;
 
-    // Allow a small delay before re-enabling the transition
-    setTimeout(() => {
-      carouselBridging.style.transition = "transform 0.8s ease";
-      slideIndexBridging = newIndex;
-      showSlideBridging();
-    }, 200);
-  } else {
-    slideIndexBridging = newIndex;
+        // Allow a small delay before re-enabling the transition
+        setTimeout(() => {
+          carouselBridging.style.transition = "transform 0.8s ease";
+          slideIndexBridging = newIndex;
+          showSlideBridging();
+        }, 200);
+      } else {
+        slideIndexBridging = newIndex;
+        showSlideBridging();
+      }
+    }
+
     showSlideBridging();
-  }
-}
 
-showSlideBridging();
+    setInterval(slideTransition, 3200);
 
-setInterval(slideTransition, 3200);
-    
     // End 
 
 
@@ -111,6 +111,7 @@ setInterval(slideTransition, 3200);
 
 
     // Start 
+    const imageGenerateStart = document.getElementById('imageGenerateStart');
     const imageGenerate = document.getElementById('imageGenerate');
     const generateButton = document.getElementById('generateButton');
     const generateText = document.getElementById('generateText');
@@ -118,13 +119,14 @@ setInterval(slideTransition, 3200);
 
     generateButton.addEventListener('click', () => {
       if (generateText.textContent === 'Generate') {
+        imageGenerateStart.style.opacity = '0';
         setTimeout(() => {
-          imageGenerate.style.animation = 'moveImage 3s ease-out forwards';
+          imageGenerate.style.animation = 'moveImage 1s ease-out forwards';
         }, 800);
 
         generateText.textContent = 'Rewrite';
       } else if (generateText.textContent === 'Restart') {
-        imageGenerate.style.animation = 'resetAnimation 3s ease-out forwards'; // Animasi reset
+        imageGenerate.style.animation = 'resetAnimation 1s ease-out forwards'; // Animasi reset
         setTimeout(() => {
           imageGenerate.style.animation = ''; // Hapus animasi agar bisa dipicu lagi
 
@@ -143,6 +145,7 @@ setInterval(slideTransition, 3200);
             </svg>
           `;
           generateText.textContent = 'Generate';
+          imageGenerateStart.style.opacity = '1';
         }, 1000); // Waktu sesuai dengan durasi animasi reset
       } else if (generateText.textContent === 'Rewrite') {
         // Action when button is in "Rewrite" state and clicked again
@@ -216,38 +219,90 @@ setInterval(slideTransition, 3200);
     });
     // End
 
-    // start
-    let clickedButton = null;
-    let lastButtonBackground = "";
-    let lastButtonBoxShadow = "";
+    // start brand
+    let activeButton = null;
 
-    function handleButtonClick(button) {
-      if (clickedButton !== null && button !== clickedButton) {
-        clickedButton.style.backgroundColor = lastButtonBackground;
-        clickedButton.style.boxShadow = lastButtonBoxShadow;
+    function resetActiveButton() {
+      if (activeButton) {
+        activeButton.style.backgroundColor = "";
+        activeButton.style.boxShadow = "";
       }
+    }
 
-      lastButtonBackground = button.style.backgroundColor;
-      lastButtonBoxShadow = button.style.boxShadow;
+    function changeContent(buttonId, button) {
+      resetActiveButton();
+
+      const contentData = {
+        buttonAirbnb: {
+          title: "Join us! Create an account, enjoy member benefits and more!",
+          image: "/public/img/brandsstyle _ airbnb.png"
+        },
+        buttonAmazon: {
+          title: "Get more perks! Register or log in to become a member.",
+          image: "/public/img/brandsstyle _ amazon.png"
+        },
+        buttonApple: {
+          title: "Get more perks! Create an account or login to join us.",
+          image: "/public/img/brandsstyle _ apple.png"
+        },
+        buttonFigma: {
+          title: "Unlock exciting benefits! Log in or Register to become a member.",
+          image: "/public/img/brandsstyle _ figma.png"
+        },
+        buttonGojek: {
+          title: "Get more out of your membership! Register or log in now!",
+          image: "/public/img/brandsstyle _ gojek.png"
+        },
+        buttonGrab: {
+          title: "Unlock exclusive benefits! Register or log in today!",
+          image: "/public/img/brandsstyle _ grab.png"
+        },
+        buttonLinkedin: {
+          title: "et more perks! Register or log in to start enjoying member benefits.",
+          image: "/public/img/brandsstyle _ linkedin.png"
+        },
+        buttonSlack: {
+          title: "Join us! Create an account, enjoy member perks and reap the benefits!",
+          image: "/public/img/brandsstyle _ slack.png"
+        },
+        buttonStripe: {
+          title: "Get more by joining us! Register or log in now.",
+          image: "/public/img/brandsstyle _ stripe.png"
+        },
+      };
+
+      const titleBrand = document.getElementById('titleBrand');
+      const imagePersonal = document.getElementById('imagePersonal');
+
+      const content = contentData[buttonId];
+
+      titleBrand.textContent = content.title;
+      imagePersonal.src = content.image;
+
+      document.getElementById('buttonReset').classList.remove('hidden-reset');
+
       button.style.backgroundColor = "#5C4BF6";
       button.style.boxShadow = "0px 0px 24px -2px #5C4BF6B8";
 
-      clickedButton = button;
-
-      const newButton = document.getElementById("new-button");
-      newButton.style.display = "block";
-
-      newButton.style.animation = "moveToLeft 1s forwards";
-
-      const resetButton = document.querySelector(".reset-button");
-      resetButton.style.display = "none";
+      activeButton = button;
+      if (buttonId === 'buttonGrab') {
+        button.querySelector('img').src = "/public/img/brandsstyle_grab_logo_hover.png"; // Ganti dengan gambar baru
+      } else if (buttonId === 'buttonStripe') {
+        button.querySelector('img').src = "/public/img/brandsstyle_stripe_logo_hover.png"; // Ganti dengan gambar baru
+      }
     }
 
-    const newButton = document.getElementById("new-button");
+    function resetContent(button) {
+      const titleBrand = document.getElementById('titleBrand');
+      const imagePersonal = document.getElementById('imagePersonal');
 
-    newButton.addEventListener("click", () => {
-      newButton.style.display = "none";
-      clickedButton.style.backgroundColor = "";
-      clickedButton.style.boxShadow = "";
-    });
+      titleBrand.textContent = "Create or login an account to join member and get more benefits!";
+      imagePersonal.src = "/public/img/brandsstyle _ default.png";
+
+      document.getElementById('buttonReset').classList.add('hidden-reset');
+
+      resetActiveButton();
+
+      activeButton = null;
+    }
     // End
