@@ -1010,6 +1010,11 @@ video {
      object-fit: cover;
 }
 
+.object-left {
+  -o-object-position: left;
+     object-position: left;
+}
+
 .p-4 {
   padding: 1rem;
 }
