@@ -222,10 +222,23 @@
     // start brand
     let activeButton = null;
 
+    let originalImages = {
+      buttonGrab: "/public/img/brandsstyle_grab_logo.png",
+      buttonStripe: "/public/img/brandsstyle_stripe_logo.png"
+    };
+
     function resetActiveButton() {
       if (activeButton) {
         activeButton.style.backgroundColor = "";
         activeButton.style.boxShadow = "";
+
+        if (activeButton.id === 'buttonGrab' && activeButton.querySelector('img').src !== originalImages.buttonGrab) {
+          activeButton.querySelector('img').src = originalImages.buttonGrab;
+        } else if (activeButton.id === 'buttonStripe' && activeButton.querySelector('img').src !== originalImages.buttonStripe) {
+          activeButton.querySelector('img').src = originalImages.buttonStripe;
+        }
+
+        activeButton = null;
       }
     }
 
@@ -258,7 +271,7 @@
           image: "/public/img/brandsstyle _ grab.png"
         },
         buttonLinkedin: {
-          title: "et more perks! Register or log in to start enjoying member benefits.",
+          title: "Get more perks! Register or log in to start enjoying member benefits.",
           image: "/public/img/brandsstyle _ linkedin.png"
         },
         buttonSlack: {
@@ -304,5 +317,16 @@
       resetActiveButton();
 
       activeButton = null;
+
+      const buttonGrab = document.getElementById('buttonGrab');
+      if (buttonGrab.querySelector('img').src !== originalImages.buttonGrab) {
+        buttonGrab.querySelector('img').src = originalImages.buttonGrab;
+      }
+
+      const buttonStripe = document.getElementById('buttonStripe');
+      if (buttonStripe.querySelector('img').src !== originalImages.buttonStripe) {
+        buttonStripe.querySelector('img').src = originalImages.buttonStripe;
+      }
+
     }
     // End
